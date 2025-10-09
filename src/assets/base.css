@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+  padding: 0px;
+ 
+}
+
+
+
+
+HTML{
+font-size: 15px;
+}
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  /* background: var(--color-background); */
+  transition:
+  color 0.5s,
+  background-color 0.5s;
+  line-height: 1.6;
+  /* font-size: 305px; */
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-style: normal; 
+  --Theme-Color: #9B22C5;
+
+  --Theme-Color-2: #9c22c549; 
+  --Theme-Color-3: #9B22C5; 
+
+  overflow-x: hidden;
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+
+
+.skillListUse{
+  text-decoration: none !important;
+  list-style: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.skillListUse li {
+  padding: 10px 10px;
+  text-decoration: none !important;
+  list-style: none !important;
+  
+}
+.skillListUse li button{
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: white;
+  background-color: transparent !important;
+  text-align: center;
+  box-shadow: 0px 0px 15px white;
+}
+
+.mainParagraph{
+  font-size: 1rem !important;
+  font-weight:500 !important;
+  font-family: "Lato", sans-serif;
+}
+
+.SmallText{
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+.BoldText{
+  font-size: 1rem !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 600 !important;
+  font-style: normal;
+  color: white;
+
+}
+.MainHeading{
+  font-size: 2rem !important;
+  padding: 0px;
+  margin-bottom: 0px;
+  color: var(--Theme-Color) !important;
+  font-weight: 800;
+  
+}
