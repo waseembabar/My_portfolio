@@ -1,38 +1,42 @@
 import './assets/main.css';
 
-// boostrap Import link 
+// ✅ Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-// boostrap Import link End
-// bootstrap icons 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
-
-
-
-import Navbar from'./components/GlobalComponent/Header.vue';
+// ✅ Global Components
+import Navbar from './components/GlobalComponent/Header.vue';
 import Footer from './components/GlobalComponent/Footer.vue';
 
-
-
+// ✅ Animation Library (AOS)
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+// ✅ Vue Core
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './router'
- 
+import App from './App.vue';
+import router from './router';
 
-// animation Libraray 
+// 🌗 === Theme Handling (Dark/Light Mode) ===
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.classList.toggle('dark', savedTheme === 'dark');
 
-const app = createApp(App)
-app.component('Navbar',Navbar)
-app.component('Footer',Footer)
-app.use(createPinia())
+// ✅ Create Vue App
+const app = createApp(App);
+
+// ✅ Global Components Registration
+app.component('Navbar', Navbar);
+app.component('Footer', Footer);
+
+// ✅ Plugins
+app.use(createPinia());
+app.use(router);
+
+// ✅ Initialize AOS
 AOS.init();
-app.use(router)
 
-app.mount('#app')
+// ✅ Mount App
+app.mount('#app');
