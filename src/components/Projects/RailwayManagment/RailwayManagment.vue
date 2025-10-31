@@ -5,17 +5,30 @@
       <router-link to="/" class="back-link mb-2 d-inline-block">← Go Back</router-link>
       <h2 class="fw-bold mb-2 text-gradient">Railways Management System</h2>
       <p class="lead text-muted">
-        In this project, I played a crucial role in managing all station activities,
-        focusing on the seamless operation of the railway system. My responsibilities
-        included overseeing train operations, maintaining schedules, managing ticketing,
-        and supervising employees for efficient coordination. My work ensured passenger
-        safety and smooth overall operations.
+        Developed a comprehensive management platform for railway operations,
+        enabling administrators to oversee train schedules, manage ticketing, monitor
+        employee performance, and track passenger data. Focused on automation,
+        real-time updates, and data-driven insights to improve operational efficiency
+        across stations.
       </p>
     </div>
 
+    <!-- Key Features -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+        <ul class="feature-list">
+          <li><b>Train Scheduling:</b> Automated timetable and route management for all trains.</li>
+          <li><b>Ticket Management:</b> Digital booking and cancellation system with real-time seat availability.</li>
+          <li><b>Employee Supervision:</b> Role-based dashboards for station managers and staff tracking.</li>
+          <li><b>Passenger Safety:</b> Monitoring tools for secure and efficient travel experiences.</li>
+          <li><b>Reporting:</b> Data analytics for operational and performance insights.</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- Skills Used -->
-    <div class="skills-section text-center mb-4">
-      <h5 class="fw-bold text-gradient">Technologies Used</h5>
+    <div class="skills-section text-center mb-5">
+      <h5 class="fw-bold mb-3 text-gradient">Technologies Used</h5>
       <ul class="skillListUse justify-content-center">
         <li v-for="(skill, i) in skills" :key="i">
           <button class="skill-btn">{{ skill }}</button>
@@ -31,11 +44,7 @@
         :key="index"
       >
         <div class="image-card" @click="openModal(img)">
-          <img
-            :src="img"
-            alt="Railways Management Screenshot"
-            class="img-fluid rounded shadow-sm"
-          />
+          <img :src="img" alt="Railways Management Screenshot" class="img-fluid rounded shadow-sm" />
         </div>
       </div>
     </div>
@@ -44,11 +53,7 @@
     <div class="modal fade show" tabindex="-1" v-if="showModal" @click.self="closeModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content bg-transparent border-0">
-          <img
-            :src="selectedImage"
-            class="img-fluid rounded shadow-lg"
-            alt="Preview"
-          />
+          <img :src="selectedImage" class="img-fluid rounded shadow-lg" alt="Preview" />
           <button
             type="button"
             class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
@@ -68,8 +73,8 @@ const skills = [
   "HTML",
   "CSS",
   "Bootstrap 5",
-  "Vue",
-  "Paina",
+  "Vue 3",
+  "Pinia",
   "Firebase",
   "Stripe.js",
 ];
@@ -92,6 +97,7 @@ function openModal(img) {
   showModal.value = true;
   document.body.classList.add("modal-open");
 }
+
 function closeModal() {
   showModal.value = false;
   selectedImage.value = null;
@@ -111,48 +117,55 @@ function closeModal() {
   color: var(--bs-primary);
 }
 
+/* Headings */
 .text-gradient {
   background: linear-gradient(90deg, var(--Theme-Color), #6f42c1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ========== Skills Section ========== */
+/* ========== Features List ========== */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.feature-list li {
+  margin-bottom: 10px;
+  background: rgba(13, 110, 253, 0.05);
+  border-left: 4px solid var(--Theme-Color);
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.feature-list li:hover {
+  background: rgba(13, 110, 253, 0.12);
+}
+ 
+/* Skills List */
 .skillListUse {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
   padding: 0;
+  justify-content: center;
 }
 .skillListUse li {
   list-style: none;
 }
 .skill-btn {
-  background: rgba(0, 0, 0, 0.05); 
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
+  color: #fff;
+  border: none;
   border-radius: 25px;
   padding: 6px 14px;
   font-size: 0.9rem;
-  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .skill-btn:hover {
-  background: var(--Theme-Color);
-  color: #fff;
-  border-color: var(--Theme-Color);
-}
-
-/* 🌙 Dark Theme Support */
-body[data-theme="dark"] .skill-btn {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-body[data-theme="dark"] .skill-btn:hover {
-  background: var(--Theme-Color);
-  color: #fff;
-  border-color: var(--Theme-Color);
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* ========== Image Gallery ========== */
@@ -160,12 +173,15 @@ body[data-theme="dark"] .skill-btn:hover {
   cursor: pointer;
   overflow: hidden;
   border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 .image-card img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   transition: transform 0.4s ease;
+  display: block;
 }
 .image-card:hover img {
   transform: scale(1.05);
@@ -191,7 +207,12 @@ body[data-theme="dark"] .skill-btn:hover {
   width: 100%;
   height: auto;
 }
-body[data-theme="dark"] .image-card:hover {
+
+/* Dark Mode */
+body[data-theme='dark'] .feature-list li {
+  background: rgba(255, 255, 255, 0.08);
+}
+body[data-theme='dark'] .image-card:hover {
   box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
 }
 </style>

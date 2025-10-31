@@ -130,27 +130,30 @@ function closeModal() {
 }
 
 /* ========== Skills Section ========== */
+/* Skills List */
 .skillListUse {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 0;
+  justify-content: center;
 }
 .skillListUse li {
   list-style: none;
 }
 .skill-btn {
-  background: var(--Theme-Color);
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
   color: #fff;
   border: none;
   border-radius: 25px;
   padding: 6px 14px;
   font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .skill-btn:hover {
-  background: #000;
-  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* ========== Image Gallery ========== */

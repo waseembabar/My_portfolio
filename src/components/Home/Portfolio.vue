@@ -91,7 +91,7 @@
      </router-link>
     </div>
  <div class="col-md-4 " data-aos="fade-up" >
-     <router-link to="/rms">
+     <router-link to="/employerpublish">
       <div class="p-3  ProjectCard ">
       <h5>employer.publish.jobs/</h5>
       <img src="../../assets/OtsProject/Employer/Employer.png" alt="" class="img-fluid">
@@ -99,10 +99,18 @@
      </router-link>
     </div>
  <div class="col-md-4 " data-aos="fade-up" >
-     <router-link to="/rms">
+     <router-link to="/profilepublish">
       <div class="p-3  ProjectCard ">
       <h5>profile.publish.jobs</h5>
-      <img src="../../assets/OtsProject/Profile/Prfile1.png" alt="" class="img-fluid">
+      <img src="../../assets/OtsProject/Profile/p1.png" alt="" class="img-fluid">
+     </div>
+     </router-link>
+    </div>
+ <div class="col-md-4 " data-aos="fade-up" >
+     <router-link to="/accountpublishjob">
+      <div class="p-3  ProjectCard ">
+      <h5>account.publish.jobs</h5>
+      <img src="../../assets/OtsProject/account/a1.png" alt="" class="img-fluid">
      </div>
      </router-link>
     </div>
