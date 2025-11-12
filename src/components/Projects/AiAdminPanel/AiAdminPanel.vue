@@ -30,14 +30,14 @@
           </ul>
           <div class="col-md-12">
                 <ul class="skillListUse">
-                    <li><button>HTML</button></li>
-                    <li><button>Css</button></li>
-                    <li><button>Bootstap 5</button></li>
-                    <li><button>Vue</button></li>
-                    <li><button>Paina</button></li>
-                    <li><button>Firebase</button></li>
-                    <li><button>Quill Editor</button></li>
-                    <li><button>Stripe.js</button></li>
+                    <li><button class="skill-btn">HTML</button></li>
+                    <li><button class="skill-btn">Css</button></li>
+                    <li><button class="skill-btn">Bootstap 5</button></li>
+                    <li><button class="skill-btn">Vue</button></li>
+                    <li><button class="skill-btn">Paina</button></li>
+                    <li><button class="skill-btn">Firebase</button></li>
+                    <li><button class="skill-btn">Quill Editor</button></li>
+                    <li><button class="skill-btn">Stripe.js</button></li>
                 </ul>
             </div>
             <div class="col-md-12">
@@ -64,6 +64,34 @@
 </script>
 
 <style scoped>
+
+
+/* Skills List */
+.skillListUse {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  justify-content: center;
+}
+.skillListUse li {
+  list-style: none;
+}
+.skill-btn {
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.skill-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .main_Div{
    border: 2px solid white;
    padding: 10px 10px 10px 10px;

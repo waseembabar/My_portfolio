@@ -1,9 +1,12 @@
 <template>
+        <ThemeToggle />
     <Home />
+   
 </template>
 
 <script setup>
 import { defineAsyncComponent } from 'vue';
+
 
 const Home = defineAsyncComponent({
     loader: () => {

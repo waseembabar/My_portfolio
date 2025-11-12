@@ -92,6 +92,21 @@ const router = createRouter({
       component: () => import('../components/Projects/publishjobs/publishjobs.vue')
     },
     {
+      path: '/profilepublish',
+      name: 'profilePublish',
+      component: () => import('../components/Projects/profilePublish/profilepublish.vue')
+    },
+    {
+      path: '/accountpublishjob',
+      name: 'accountpublishjob',
+      component: () => import('../components/Projects/account/account.vue')
+    },
+    {
+      path: '/employerpublish',
+      name: 'employerpublish',
+      component: () => import('../components/Projects/employerpublish/employerpublish.vue')
+    },
+    {
       path: '/FarmnCho',
       name: 'FarmnCho',
       component: () => import('../components/Projects/Farmncho/Farmncho.vue')

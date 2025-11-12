@@ -1,171 +1,239 @@
-<template>
-   
-    <div class="contact-section py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">Available 24/7</span>
-                <h2 class="display-5 fw-bold mb-3 ">Get In Touch With Us</h2>
-                <p class="lead text-muted">We're always here to help you with any questions or inquiries.</p>
+<!-- <template>
+  <section class="contact-wrapper">
+    <div class="container-fluid px-5">
+      <div class="row mx-5"> 
+        <div class="col-lg-8 col-md-7 p-5 form-column">
+          <h1 class="mb-4 fw-bold gradient-text">Send us a message</h1>
+ 
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="contact-form"
+          > 
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="d-none">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+ 
+            <div class="mb-3">
+              <label for="name" class="form-label">Name*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div> 
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone Number"
+                />
+              </div>
+            </div> 
+            <div class="mb-4">
+              <label for="message" class="form-label">Message*</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Write your message"
+                required
+              ></textarea>
             </div>
-        </div>
-        
-        <div class="row g-4 justify-content-center">
-            <!-- Location Card -->
-            <div class="col-md-4">
-                <div class="contact-card card h-100 border-0 shadow-sm hover-lift">
-                    <div class="card-body p-4 text-center">
-                        <div class="icon-circle bg-primary bg-opacity-10 text-primary mb-4 mx-auto">
-                            <i class="bi bi-geo-alt fs-3"></i>
-                        </div>
-                        <h5 class="card-title mb-3">Our Location</h5>
-                        <p class="card-text text-muted">Bahria Town  Phase 6 Bahria Town, Rawalpindi, Pakistan</p>
-                        <a href="https://maps.app.goo.gl/25xHPUCGyZitq7VJA" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="btn btn-link text-primary p-0 mt-2">
-                            View on Map <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Phone Card -->
-            <div class="col-md-4">
-                <div class="contact-card card h-100 border-0 shadow-sm hover-lift">
-                    <div class="card-body p-4 text-center">
-                        <div class="icon-circle bg-success bg-opacity-10 text-success mb-4 mx-auto">
-                            <i class="bi bi-telephone fs-3"></i>
-                        </div>
-                        <h5 class="card-title mb-3">Call Us</h5>
-                        <p class="card-text text-muted">Available anytime for your questions</p>
-                        <a href="tel:03369420537" class="btn btn-link text-success p-0 mt-2">0336 9420537</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Email Card -->
-            <div class="col-md-4">
-                <div class="contact-card card h-100 border-0 shadow-sm hover-lift">
-                    <div class="card-body p-4 text-center">
-                        <div class="icon-circle bg-danger bg-opacity-10 text-danger mb-4 mx-auto">
-                            <i class="bi bi-envelope fs-3"></i>
-                        </div>
-                        <h5 class="card-title mb-3">Email Us</h5>
-                        <p class="card-text text-muted">We'll respond within 24 hours</p>
-                        <a href="mailto:waseembabar55@gmail.com" class="btn btn-link text-danger p-0 mt-2">waseembabar55@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+ 
+            <button type="submit" class="btn btn-gradient btn-lg">
+              Send Message
+            </button>
+          </form>
 
+          <hr class="my-5" />
+        </div>
+ 
+        <div class="col-lg-4 col-md-5 text-white p-5 contact-info-column">
+          <h2 class="fw-bold mb-4">Contact Information</h2>
+          <p class="mb-4 opacity-75">
+            Have a project in mind? Let’s make something great together!
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-item mb-3">
+              <i class="bi bi-geo-alt-fill me-2"></i>
+              <span>Bahria Town Phase 6, Rawalpindi, Pakistan</span>
+            </div>
+
+            <div class="contact-item mb-3">
+              <i class="bi bi-telephone-fill me-2"></i>
+              <a href="tel:03369420537" class="text-white text-decoration-none">
+                0336 9420537
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a
+                href="mailto:waseembabar55@gmail.com"
+                class="text-white text-decoration-none"
+              >
+                waseembabar55@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="social-links mt-4">
+            <a href="#" class="me-3 text-white fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-3 text-white fs-4"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
 </template>
 
-<script setup>
-
+<script setup> 
 </script>
 
-<style  scoped>
-   
-    .icon-circle {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .contact-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-lift:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .lead{
-        color: rgb(119, 118, 116) !important;
-    }
-
-@keyframes zoom {
-    0% {
-        color: red; /* Initial size */
-        font-size: 1.1rem;
-    }
-    50% {
-       color: rgba(255, 0, 0, 0.459); /* Zoomed out size */
-       font-size: 1.1rem;
-
-    }
-    100% {
-        color: red; /* Back to initial size */
-        font-size: 1.1rem;
-
-    }
+<style scoped> 
+.contact-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--contact-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.zoom-animation {
-    animation: zoom 2s infinite; /* 2 seconds duration, infinite */
+:root {
+  --contact-bg: radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(236, 72, 153, 0.12),
+      transparent 50%
+    );
+  --form-bg: #ffffff;
+  --text-color: #1e1e1e;
+  --border-color: #ddd;
 }
 
-
-.AdressSectionDiv{
-    margin-top: 8px !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.AdressSectionDiv i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    font-size: 1.2rem;
-    border: 1px solid var(--Theme-Color);
-    color: var(--Theme-Color);
-    border-radius: 50%;
-    padding: 0px;
-    margin: 0px;
-}
-h5{
-    font-size: 1.1rem;
-}
-.AdressSectionDiv{
-    font-size: .8rem;
+[data-bs-theme="dark"] {
+  --contact-bg: radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(236, 72, 153, 0.15),
+      transparent 60%
+    ),
+    #0f0f0f;
+  --form-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Small Tablets & Large Phones (576px to 767px) */
-@media (min-width: 576px) and (max-width: 767px) {
-    .AdressSectionDiv{
-    margin-top: 8px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+.form-column {
+  background-color: var(--form-bg);
+  color: var(--text-color);
 }
 
-/* Phones (up to 575px) */
-@media (max-width: 575px) {
-    .AdressSectionDiv{
-    margin-top: 8px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+.contact-info-column {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Extra Small Devices (up to 400px) */
-@media (max-width: 400px) {
-    .AdressSectionDiv{
-    margin-top: 8px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.contact-form .form-control {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 12px 14px;
+  font-size: 15px;
+  background-color: transparent;
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
+
+.contact-form .form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
 }
-</style>
+
+.btn-gradient {
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-info i {
+  color: #fff;
+}
+
+.contact-item {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .contact-info-column {
+    text-align: center;
+  }
+}
+</style> -->
+<template>
+<div class="container my-5"></div></template>
+<script setup>
+</script>

@@ -1,61 +1,148 @@
 <template>
-    <div class="container mt-5 pt-md-5  mb-5 pb-0 mb-md-5" >
-        <div class="row mt-0 mt-md-5" >
-            <div class="col-sm-12 col-md-3" data-aos-delay="50" data-aos="fade-up">
-               <div class="AboutImageDiv " style=" animation: border-motion 3s infinite linear;">
-                <img src="../../assets/AboutUsSection.png" alt="" class="">
-           
-               </div>
+  <section class=" py-5 py-md-6"  :class="[
+    'py-5 py-md-6',
+    theme === 'light' ? 'about-section' : ''
+  ]">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image Section -->
+     
 
-               
-            </div>
-            <div class="col-sm-12 col-md-9" data-aos-delay="50" data-aos="fade-down">
-                <h4 class="MainHeading">Waseem Babar</h4>
-                <p class="Skil">Front End Developer</p>
-               <p class="SmallText">I'm Waseem Babar, leading a skilled team in HTML, CSS, JavaScript, Vue 3, and Nuxt.js to create dynamic, user-focused web experiences. We merge design with functionality, using cutting-edge web technologies to realize your vision. Let’s collaborate to enhance your online presence and build something exceptional in the digital space.</p>
-                
-            </div>
+        <!-- Text Section -->
+        <div
+          class="col-md-7"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          
+         
+          <p class="about-description">
+            I'm <strong>Waseem Babar</strong>, leading a passionate team skilled
+            in <b>HTML, CSS, JavaScript, Vue 3, and Nuxt.js</b> to create
+            dynamic, user-focused web experiences.  
+            We blend <span class="highlight">creativity</span> and
+            <span class="highlight">technology</span> to turn your ideas into
+            reality. Let’s collaborate and build something exceptional that
+            stands out in the digital world.
+          </p>
+
+          <button class="theme-btn mt-3" data-aos="zoom-in" data-aos-delay="300">
+            Let’s Work Together
+          </button>
         </div>
+      </div>
     </div>
+  </section>
 </template>
 
 <script setup>
-
+// No JS needed here
 </script>
 
-<style lang="scss" scoped>
-
-
-
-
-.AboutImageDiv{
-    position: relative;
-    margin: 0px auto;
-    display: flex;align-content: center;
-    justify-content: center;
-    border-radius: 5px;
-    border: 1px solid var(--Theme-Color);
-    animation: border-motion 3s infinite linear;
+<style scoped lang="scss">
+.about-section {
+  background: linear-gradient(
+    135deg,
+    var(--Theme-Color-3, #f0f9ff),
+    #ffffff
+  );
+  border-radius: 12px;
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
 }
-@keyframes border-motion {
+
+/* Glow Border Wrapper */
+.about-image-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 10px;
+  background: radial-gradient(
+    circle,
+    var(--Theme-Color, #007bff),
+    transparent 70%
+  );
+  transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Glowing animated border */
+.glow-border {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 3px solid var(--Theme-Color, #007bff);
+  animation: glow 3s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glow {
   0% {
-    border-color: transparent;
-  }
-  25% {
-    border-color: var(--Theme-Color-3); /* New color */
+    box-shadow: 0 0 10px var(--Theme-Color),
+      0 0 20px var(--Theme-Color-3, #00e0ff);
   }
   50% {
-    border-color: var(--Theme-Color); /* New color */
-  }
-  75% {
-    border-color: var(--Theme-Color-3); /* New color */
+    box-shadow: 0 0 25px var(--Theme-Color-3),
+      0 0 50px var(--Theme-Color);
   }
   100% {
-    border-color: transparent;
+    box-shadow: 0 0 10px var(--Theme-Color),
+      0 0 20px var(--Theme-Color-3);
   }
 }
-.AboutImageDiv img{
-    height: 65%;
-    width: 65%;
+
+/* Image */
+.about-image {
+  width: 80%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text Section */
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700; 
+}
+
+.highlight {
+  color: var(--Theme-Color);
+}
+
+.about-role {
+  color: var(--Theme-Color-3, #00bcd4);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+.about-description { 
+  margin-top: 15px;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Button */
+.theme-btn {
+  background: var(--Theme-Color);
+  border: none;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--Theme-Color-3);
+  transform: translateY(-3px);
 }
 </style>

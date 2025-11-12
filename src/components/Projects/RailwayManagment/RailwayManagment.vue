@@ -1,89 +1,218 @@
 <template>
-    <div class="container">
-        <div class="row main_Div">
-            <router-link to="/">Go back</router-link>
-            <h5 class="text-center"> Railways Managment System</h5>
-           
-                    <p>In this project, I played a crucial role in managing all station activities, focusing on the seamless operation of the railway system. My responsibilities included overseeing train operations, ensuring that schedules were followed precisely to maintain efficiency and minimize delays. I also managed the ticketing process, implementing a streamlined system for booking, canceling, and tracking tickets to enhance the passenger experience. Additionally, I supervised employees, ensuring that staff coordination was optimal and that all team members were aligned with operational goals. My efforts contributed to passenger safety, effective staff management, and the overall smooth operation of the station.</p>
-            
-                    <div class="col-md-12">
-                <ul class="skillListUse">
-                    <li><button>HTML</button></li>
-                    <li><button>Css</button></li>
-                    <li><button>Bootstap 5</button></li>
-                    <li><button>Vue</button></li>
-                    <li><button>Paina</button></li>
-                    <li><button>Firebase</button></li>
-                    <li><button>Stripe.js</button></li>
-                </ul>
-            </div>
-            
-            <div class="col-md-12">
-                <img src="../../../assets/RailwayManagment/TrainManagement1.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/RailwayManagment/TrainManagement2.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/RailwayManagment/TrainManagement3.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/RailwayManagment/TrainManagement4.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/RailwayManagment/TrainManagement5.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-           
-           
-        </div>
-        
+  <div class="container py-5">
+    <!-- Header -->
+    <div class="row text-center mb-4">
+      <router-link to="/" class="back-link mb-2 d-inline-block">← Go Back</router-link>
+      <h2 class="fw-bold mb-2 text-gradient">Railways Management System</h2>
+      <p class="lead text-muted">
+        Developed a comprehensive management platform for railway operations,
+        enabling administrators to oversee train schedules, manage ticketing, monitor
+        employee performance, and track passenger data. Focused on automation,
+        real-time updates, and data-driven insights to improve operational efficiency
+        across stations.
+      </p>
     </div>
+
+    <!-- Key Features -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+        <ul class="feature-list">
+          <li><b>Train Scheduling:</b> Automated timetable and route management for all trains.</li>
+          <li><b>Ticket Management:</b> Digital booking and cancellation system with real-time seat availability.</li>
+          <li><b>Employee Supervision:</b> Role-based dashboards for station managers and staff tracking.</li>
+          <li><b>Passenger Safety:</b> Monitoring tools for secure and efficient travel experiences.</li>
+          <li><b>Reporting:</b> Data analytics for operational and performance insights.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Skills Used -->
+    <div class="skills-section text-center mb-5">
+      <h5 class="fw-bold mb-3 text-gradient">Technologies Used</h5>
+      <ul class="skillListUse justify-content-center">
+        <li v-for="(skill, i) in skills" :key="i">
+          <button class="skill-btn">{{ skill }}</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="row g-3 justify-content-center">
+      <div
+        class="col-12 col-md-4"
+        v-for="(img, index) in projectImages"
+        :key="index"
+      >
+        <div class="image-card" @click="openModal(img)">
+          <img :src="img" alt="Railways Management Screenshot" class="img-fluid rounded shadow-sm" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade show" tabindex="-1" v-if="showModal" @click.self="closeModal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+          <img :src="selectedImage" class="img-fluid rounded shadow-lg" alt="Preview" />
+          <button
+            type="button"
+            class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            @click="closeModal"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 
+// Skills used
+const skills = [
+  "HTML",
+  "CSS",
+  "Bootstrap 5",
+  "Vue 3",
+  "Pinia",
+  "Firebase",
+  "Stripe.js",
+];
+
+// Project images
+const projectImages = [
+  new URL("@/assets/RailwayManagment/TrainManagement1.png", import.meta.url).href,
+  new URL("@/assets/RailwayManagment/TrainManagement2.png", import.meta.url).href,
+  new URL("@/assets/RailwayManagment/TrainManagement3.png", import.meta.url).href,
+  new URL("@/assets/RailwayManagment/TrainManagement4.png", import.meta.url).href,
+  new URL("@/assets/RailwayManagment/TrainManagement5.png", import.meta.url).href,
+];
+
+// Modal Logic
+const showModal = ref(false);
+const selectedImage = ref(null);
+
+function openModal(img) {
+  selectedImage.value = img;
+  showModal.value = true;
+  document.body.classList.add("modal-open");
+}
+
+function closeModal() {
+  showModal.value = false;
+  selectedImage.value = null;
+  document.body.classList.remove("modal-open");
+}
 </script>
 
 <style scoped>
-a{
-    color: red;
-    text-decoration: none;
-    font-weight:600;
-    height: 30px;
-    padding-top: 3px;
-    width: 80px !important;
-    border-radius: 5px;
+/* ========== Layout ========== */
+.back-link {
+  text-decoration: none;
+  color: var(--Theme-Color);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
-a:hover{
-    background-color: red;
-    color: white;
-    height: 30px;
-    padding-top: 3px;
-    width: 80px !important;
-    border-radius: 5px;
+.back-link:hover {
+  color: var(--bs-primary);
 }
 
-.main_Div{
-   border: 2px solid white;
-   padding: 10px 10px 10px 10px;
+/* Headings */
+.text-gradient {
+  background: linear-gradient(90deg, var(--Theme-Color), #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.main_Div ul {
-    margin-left: 20px;
+
+/* ========== Features List ========== */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
 }
-.main_Div ul li{
-    list-style-type: decimal;
+.feature-list li {
+  margin-bottom: 10px;
+  background: rgba(13, 110, 253, 0.05);
+  border-left: 4px solid var(--Theme-Color);
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
-.main_Div  Img{
-    border-radius: 10px;
-    margin-bottom: 20px;
+.feature-list li:hover {
+  background: rgba(13, 110, 253, 0.12);
+}
+ 
+/* Skills List */
+.skillListUse {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  justify-content: center;
+}
+.skillListUse li {
+  list-style: none;
+}
+.skill-btn {
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.skill-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Image Gallery ========== */
+.image-card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.image-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+  display: block;
+}
+.image-card:hover img {
+  transform: scale(1.05);
+}
+.image-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Modal Styling ========== */
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+
+/* Dark Mode */
+body[data-theme='dark'] .feature-list li {
+  background: rgba(255, 255, 255, 0.08);
+}
+body[data-theme='dark'] .image-card:hover {
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
 }
 </style>

@@ -3,11 +3,12 @@
     <!-- Header -->
     <div class="row text-center mb-4">
       <router-link to="/" class="back-link mb-2 d-inline-block">← Go Back</router-link>
-      <h2 class="fw-bold mb-2 text-gradient">publish.jobs</h2>
+      <h2 class="fw-bold mb-2 text-gradient">Account Management — publish.jobs</h2>
       <p class="lead text-muted">
-        Built a LinkedIn-style job platform enabling candidates to explore, filter, and apply for full-time, part-time, or contractual positions.
-        Integrated server-side rendering (Nuxt 3) for SEO optimization and lightning-fast performance. Designed a complete flow with resume uploads,
-        multi-step application forms, and real-time job tracking.
+        Developed a secure and user-friendly account management module that enables users to
+        update their profile information, manage invitations, and monitor connected devices.
+        Focused on providing an intuitive interface with seamless performance and robust
+        data protection using Nuxt 3.
       </p>
     </div>
 
@@ -15,11 +16,10 @@
     <div class="row justify-content-center mb-4">
       <div class="col-md-8">
         <ul class="feature-list">
-          <li><b>Dynamic Job Portal:</b> Users can explore permanent, contract, and part-time roles.</li>
-          <li><b>Server-Side Rendering:</b> Enhanced SEO and faster content delivery using Nuxt 3.</li>
-          <li><b>Multi-Step Application Flow:</b> Includes resume upload, validation, and status tracking.</li>
-          <li><b>Business & Employer Accounts:</b> Separate dashboards for job posters and applicants.</li>
-          <li><b>Real-Time Updates:</b> Live feedback, notifications, and performance analytics.</li>
+          <li><b>Profile Updates:</b> Users can update their name, password, and profile image securely.</li>
+          <li><b>Invitations:</b> Receive and manage job or business invitations directly within the dashboard.</li>
+          <li><b>Connected Devices:</b> View and manage logged-in devices for enhanced security.</li>
+          <li><b>Responsive Design:</b> Optimized for all screen sizes with fast-loading UI.</li>
         </ul>
       </div>
     </div>
@@ -36,9 +36,13 @@
 
     <!-- Image Gallery -->
     <div class="row g-3 justify-content-center">
-      <div class="col-12 col-md-4" v-for="(img, index) in projectImages" :key="index">
-        <div class="image-card" @click="openModal(img.src)">
-          <img :src="img.src" :alt="img.alt" class="img-fluid rounded shadow-sm" />
+      <div
+        class="col-12 col-md-4"
+        v-for="(img, index) in projectImages"
+        :key="index"
+      >
+        <div class="image-card" @click="openModal(img)">
+          <img :src="img" alt="Account Management Screenshot" class="img-fluid rounded shadow-sm" />
         </div>
       </div>
     </div>
@@ -62,28 +66,25 @@
 <script setup>
 import { ref } from "vue";
 
-// Skills Used
+// Skills used
 const skills = [
   "Nuxt 3",
   "Tailwind CSS",
-  "CSS3",
   "TypeScript",
   "Vuetify",
   "Vuexy",
-  "Pinia",
   "Firebase",
-  "Stripe.js",
+  "Pinia",
 ];
 
-// Project Images (Array of Objects)
+// Project images
 const projectImages = [
-  { src: new URL("@/assets/OtsProject/website/p1.png", import.meta.url).href, alt: "Home Page" },
-  { src: new URL("@/assets/OtsProject/website/p2.png", import.meta.url).href, alt: "Job Listing" },
-  { src: new URL("@/assets/OtsProject/website/p3.png", import.meta.url).href, alt: "Candidate Dashboard" },
-  { src: new URL("@/assets/OtsProject/website/p4.png", import.meta.url).href, alt: "Candidate Dashboard" },
-  { src: new URL("@/assets/OtsProject/website/p5.png", import.meta.url).href, alt: "Candidate Dashboard" },
-  { src: new URL("@/assets/OtsProject/website/p6.png", import.meta.url).href, alt: "Candidate Dashboard" },
-   
+  new URL("@/assets/OtsProject/account/a1.png", import.meta.url).href,
+  new URL("@/assets/OtsProject/account/a2.png", import.meta.url).href,
+  new URL("@/assets/OtsProject/account/a3.png", import.meta.url).href,
+  new URL("@/assets/OtsProject/account/a4.png", import.meta.url).href,
+  new URL("@/assets/OtsProject/account/a5.png", import.meta.url).href,
+  new URL("@/assets/OtsProject/account/a6.png", import.meta.url).href,
 ];
 
 // Modal Logic
@@ -104,7 +105,7 @@ function closeModal() {
 </script>
 
 <style scoped>
-/* Go Back Link */
+/* ========== Layout ========== */
 .back-link {
   text-decoration: none;
   color: var(--Theme-Color);
@@ -115,14 +116,14 @@ function closeModal() {
   color: var(--bs-primary);
 }
 
-/* Gradient Text */
+/* Headings */
 .text-gradient {
   background: linear-gradient(90deg, var(--Theme-Color), #6f42c1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Feature List */
+/* ========== Features List ========== */
 .feature-list {
   list-style: none;
   padding: 0;
@@ -140,6 +141,7 @@ function closeModal() {
   background: rgba(13, 110, 253, 0.12);
 }
 
+/* ========== Skills Section ========== */
 /* Skills List */
 .skillListUse {
   display: flex;
@@ -152,20 +154,22 @@ function closeModal() {
   list-style: none;
 }
 .skill-btn {
-  background: var(--Theme-Color);
+  background: linear-gradient(90deg, var(--Theme-Color, #ff4d6d), #6f42c1);
   color: #fff;
   border: none;
   border-radius: 25px;
   padding: 6px 14px;
   font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .skill-btn:hover {
-  background: #000;
-  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Image Gallery */
+
+/* ========== Image Gallery ========== */
 .image-card {
   cursor: pointer;
   overflow: hidden;
@@ -187,7 +191,7 @@ function closeModal() {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Modal */
+/* ========== Modal Styling ========== */
 .modal-open {
   overflow: hidden;
 }

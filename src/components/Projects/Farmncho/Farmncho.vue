@@ -1,104 +1,205 @@
 <template>
-    <div class="container">
-        <div class="row main_Div">
-            <router-link to="/">Go back</router-link>
-            <h5 class="text-center">Farmncho Admin Side Ecommerce</h5>
-            <p>In the Farmncho project, I managed the development of a multi-language online platform dedicated to the
-                purchase and sale of food-related products. My key responsibilities included utilizing i18n for language
-                localization, ensuring that users from various regions could access the platform in their preferred
-                language. I also integrated APIs to facilitate seamless data exchange between the platform and external
-                services, improving the overall functionality and user experience. Additionally, I implemented Firebase
-                for push notifications, which played a crucial role in enhancing user engagement and ensuring the
-                reliability of real-time updates, keeping users informed and active on the platform.</p>
-            <div class="col-md-12">
-                <ul class="skillListUse">
-                    <li><button>HTML</button></li>
-                    <li><button>Css</button></li>
-                    <li><button>Bootstap 5</button></li>
-                    <li><button>Vue</button></li>
-                    <li><button>Paina</button></li>
-                    <li><button>Firebase</button></li>
-                    <li><button>Quill Editor</button></li>
-                </ul>
-            </div>
-            <div class="col-md-12">
-                <img src="../../../assets/FarmnCho/I1.png" alt="" class="img-fluid">
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/FarmnCho/i2.png" alt="" class="img-fluid">
-
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/FarmnCho/i3.png" alt="" class="img-fluid">
-
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/FarmnCho/i4.png" alt="" class="img-fluid">
-
-            </div>
-            <hr>
-
-            <div class="col-md-12">
-                <img src="../../../assets/FarmnCho/i5.png" alt="" class="img-fluid">
-
-            </div>
-            <hr>
-
-
-        </div>
-
+  <div class="container py-5">
+    <!-- Header -->
+    <div class="row text-center mb-4">
+      <router-link to="/" class="back-link mb-2 d-inline-block">← Go Back</router-link>
+      <h2 class="fw-bold mb-2 text-gradient">Farmncho Admin Side Ecommerce</h2>
+      <p class="lead text-muted">
+        In the Farmncho project, I managed the development of a multi-language online platform for the
+        purchase and sale of food-related products. I implemented <b>i18n</b> for localization, integrated
+        APIs for data exchange, and used <b>Firebase</b> for push notifications — enhancing real-time user
+        engagement and multilingual accessibility.
+      </p>
     </div>
+
+    <!-- Key Features -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+        <ul class="feature-list">
+          <li><b>Multi-Language Support:</b> Implemented using Vue i18n for global user access.</li>
+          <li><b>API Integration:</b> Real-time data synchronization for better functionality.</li>
+          <li><b>Firebase Notifications:</b> Used for real-time updates and alerts.</li>
+          <li><b>Admin Dashboard:</b> Easy product management and analytics for admins.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Skills Used -->
+    <div class="skills-section text-center mb-5">
+      <h5 class="fw-bold mb-3 text-gradient">Technologies Used</h5>
+      <ul class="skillListUse justify-content-center">
+        <li v-for="(skill, i) in skills" :key="i">
+          <button class="skill-btn">{{ skill }}</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="row g-3 justify-content-center">
+      <div
+        class="col-12 col-md-4"
+        v-for="(img, index) in projectImages"
+        :key="index"
+      >
+        <div class="image-card" @click="openModal(img)">
+          <img :src="img" alt="Farmncho Admin Screenshot" class="img-fluid rounded shadow-sm" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade show" tabindex="-1" v-if="showModal" @click.self="closeModal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+          <img :src="selectedImage" class="img-fluid rounded shadow-lg" alt="Preview" />
+          <button
+            type="button"
+            class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            @click="closeModal"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 
+// Technologies used
+const skills = [
+  "HTML", "CSS", "Bootstrap 5", "Vue", "Paina", "Firebase", "Quill Editor", "Vue i18n"
+];
+
+// Images
+const projectImages = [
+  new URL("@/assets/FarmnCho/I1.png", import.meta.url).href,
+  new URL("@/assets/FarmnCho/i2.png", import.meta.url).href,
+  new URL("@/assets/FarmnCho/i3.png", import.meta.url).href,
+  new URL("@/assets/FarmnCho/i4.png", import.meta.url).href,
+  new URL("@/assets/FarmnCho/i5.png", import.meta.url).href
+];
+
+// Modal Logic
+const showModal = ref(false);
+const selectedImage = ref(null);
+
+function openModal(img) {
+  selectedImage.value = img;
+  showModal.value = true;
+  document.body.classList.add("modal-open");
+}
+
+function closeModal() {
+  showModal.value = false;
+  selectedImage.value = null;
+  document.body.classList.remove("modal-open");
+}
 </script>
 
 <style scoped>
-
-/* CSS */
-
-
-a {
-    color: red;
-    text-decoration: none;
-    font-weight: 600;
-    height: 30px;
-    padding-top: 3px;
-    width: 80px !important;
-    border-radius: 5px;
+/* ========== Layout ========== */
+.back-link {
+  text-decoration: none;
+  color: var(--Theme-Color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.back-link:hover {
+  color: var(--bs-primary);
 }
 
-a:hover {
-    background-color: red;
-    color: white;
-    height: 30px;
-    padding-top: 3px;
-    width: 80px !important;
-    border-radius: 5px;
+/* Headings */
+.text-gradient {
+  background: linear-gradient(90deg, var(--Theme-Color), #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.main_Div {
-    border: 2px solid white;
-    padding: 10px 10px 10px 10px;
+/* ========== Features List ========== */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.feature-list li {
+  margin-bottom: 10px;
+  background: rgba(13, 110, 253, 0.05);
+  border-left: 4px solid var(--Theme-Color);
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.feature-list li:hover {
+  background: rgba(13, 110, 253, 0.12);
 }
 
-.main_Div ul {
-    margin-left: 20px;
+/* ========== Skills Section ========== */
+.skillListUse {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+.skillListUse li {
+  list-style: none;
+}
+.skill-btn {
+  background: var(--Theme-Color);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.skill-btn:hover {
+  background: #000;
+  color: #fff;
 }
 
-.main_Div ul li {
-    list-style-type: decimal;
+/* ========== Image Gallery ========== */
+.image-card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.image-card img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+.image-card:hover img {
+  transform: scale(1.05);
+}
+.image-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.main_Div Img {
-    border-radius: 10px;
-    margin-bottom: 20px;
+/* ========== Modal Styling ========== */
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+
+/* Dark mode compatibility */
+body[data-theme='dark'] .feature-list li {
+  background: rgba(255, 255, 255, 0.08);
+}
+body[data-theme='dark'] .image-card:hover {
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
 }
 </style>
