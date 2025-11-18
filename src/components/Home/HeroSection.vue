@@ -1,10 +1,10 @@
 <template>
-  <section class="hero-about-section py-5 py-md-6">
+  <section class="hero-about-section ">
     <div class="container">
       <div class="row align-items-center">
         <!-- Left: Profile Info -->
         <div
-          class="col-lg-6 mb-5 mb-lg-0"
+          class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1"
           data-aos="fade-right"
           data-aos-delay="100"
         >
@@ -17,40 +17,30 @@
               I am <span id="typed"></span>
             </h5>
 
-           <p class="about-description">
-  I'm <strong>Waseem Babar</strong>, a passionate 
-  <span class="highlight">Frontend Developer</span> leading a talented team skilled in 
-  <b>HTML, CSS, JavaScript, Vue 3, and Nuxt.js</b>.  
-  We merge <span class="highlight">design</span>, <span class="highlight">creativity</span>, and 
-  <span class="highlight">technology</span> to craft dynamic, user-focused web experiences.  
-  Let’s collaborate to turn your ideas into reality and build something truly exceptional that stands out in the digital world.
-</p>
+            <p class="about-description">
+              A passionate 
+              <span class="highlight">Frontend Developer</span> skilled in 
+              <b>HTML, CSS, JavaScript, Vue 3, NUXT Ui and Nuxt.js</b>.  
+              I merge <span class="highlight">design</span>, <span class="highlight">creativity</span>, and 
+              <span class="highlight">technology</span> to craft dynamic, user-focused web experiences.  
+              Let’s collaborate to turn your ideas into reality and build something truly exceptional that stands out in the digital world.
+            </p>
 
             <!-- Social Links -->
-            <!-- <div class="SocialLink mt-4">
+            <div class="SocialLink mt-4">
               <div class="me-3 iconDiv">
                 <a href="https://www.facebook.com/waseembabar4/" target="_blank">
-                  <i class="ion-social-facebook-outline"></i>
+                  <i class="bi bi-facebook"></i>
                 </a>
               </div>
               <div class="me-3 iconDiv" @click="openWhatsApp">
-                <i class="ion-social-whatsapp-outline"></i>
+                <i class="bi bi-whatsapp"></i>
               </div>
               <div class="me-3 iconDiv">
                 <a href="https://twitter.com/waseembabar55" target="_blank">
-                  <i class="bi-social-twitter-outline">
-
-                  </i>
+                  <i class="bi bi-twitter-x"></i>
                 </a>
               </div>
-         <div class="me-3 iconDiv">
-                <a
-                  href="https://www.linkedin.com/in/waseem-babar-447480160"
-                  target="_blank"
-                >
-                  <i class="ion-social-linkedin-outline"></i>
-                </a>
-              </div> 
               <div class="iconDiv">
                 <a
                   class="nav-link BoldText"
@@ -61,32 +51,7 @@
                   <i class="bi bi-cloud-arrow-down"></i>
                 </a>
               </div>
-            </div> -->
-<div class="SocialLink mt-4">
-  <div class="me-3 iconDiv">
-    <a href="https://www.facebook.com/waseembabar4/" target="_blank">
-      <i class="bi bi-facebook"></i>
-    </a>
-  </div>
-  <div class="me-3 iconDiv" @click="openWhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </div>
-  <div class="me-3 iconDiv">
-    <a href="https://twitter.com/waseembabar55" target="_blank">
-      <i class="bi bi-twitter-x"></i>
-    </a>
-  </div>
-  <div class="iconDiv">
-    <a
-      class="nav-link BoldText"
-      href="waseemCv.pdf"
-      target="_blank"
-      title="Resume"
-    >
-      <i class="bi bi-cloud-arrow-down"></i>
-    </a>
-  </div>
-</div>
+            </div>
 
             <button
               class="theme-btn mt-4"
@@ -100,14 +65,14 @@
 
         <!-- Right: Profile Image -->
         <div
-          class="col-lg-6 text-center"
+          class="col-lg-6 text-center order-1 order-lg-2 mb-4 mb-lg-0"
           data-aos="fade-left"
           data-aos-delay="200"
         >
           <div class="about-image-wrapper">
             <div class="glow-border"></div>
             <img
-              src="@/assets/AboutUsSection.png"
+              src="@/assets/ProfileImages.png"
               alt="About Waseem Babar"
               class="about-image"
             />
@@ -142,7 +107,7 @@ const initTyped = () => {
 };
 
 function openWhatsApp() {
-  const phoneNumber = "923359897059";
+  const phoneNumber = "923369420537";
   window.open(`https://wa.me/${phoneNumber}`, "_blank");
 }
 
@@ -154,10 +119,12 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .hero-about-section {
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.03), rgba(0, 0, 0, 0.02));
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.03), rgba(0, 0, 0, 0.02));
   transition: all 0.4s ease;
-  border-radius: 20px;
   padding: 50px 0; 
+  display: flex;
+  align-items: center;
+ min-height: 100vh;
 }
 
 /* Headings */
@@ -248,11 +215,13 @@ onMounted(() => {
 
 /* Image */
 .about-image-wrapper {
+  height: 350px;
+  width: 300px;
   position: relative;
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
-  padding: 10px;
+  padding: 10px 20px;
   transition: transform 0.5s ease;
   background: radial-gradient(
     circle,
@@ -260,6 +229,7 @@ onMounted(() => {
     transparent 70%
   );
 }
+ 
 .about-image-wrapper:hover {
   transform: scale(1.05);
 }

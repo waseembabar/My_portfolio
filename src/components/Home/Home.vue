@@ -10,12 +10,10 @@ onMounted(() => {
 });
 
 import HeroSection from "../Home/HeroSection.vue";
-import ThemeToggle from "../ThemeToggle.vue";
-import AboutUs from "../Home/Aboutus.vue";
+
 import Service from "../Home/Service.vue";
 import Portfolio from "./Portfolio.vue";
 import ContactUs from "./ContactUs.vue";
-import Map from "./GoogleMap.vue";
 import ChouseUs from "./ChouseUs.vue";
 
 let activeLink = ref("home");
@@ -34,13 +32,8 @@ defineExpose({ setActive });
     <img src="../../assets/4.gif" alt="Loading" />
   </div>
 
-  <div v-else style="overflow-x: hidden;">
-    <!-- Navbar Code Start -->
-   
-    <!-- Navbar Code End -->
-
-    <!-- Sections -->
-       <!-- <ThemeToggle /> -->
+  <div v-else style="overflow-x: hidden" >
+    
     <section id="HeroSection"><HeroSection /></section>
     <!-- <section id="aboutus"><AboutUs /></section> -->
     <section id="Service"><Service /></section>
