@@ -7,7 +7,7 @@ onMounted(() => {
   AOS.init({ duration: 800, once: true })
 })
 
-// Detect if dark theme is active (Bootstrap theme)
+// Detect Bootstrap theme
 const isDark = ref(false)
 onMounted(() => {
   const currentTheme =
@@ -17,7 +17,7 @@ onMounted(() => {
   isDark.value = currentTheme === 'dark'
 })
 
-// Dynamic Service Cards Data
+// Your OLD SERVICES DATA (unchanged)
 const services = ref([
   {
     icon: 'bi bi-laptop',
@@ -67,7 +67,10 @@ const services = ref([
 <template>
   <section class="why-section py-5">
     <div class="container text-center">
-      <h3 class="MainHeading fw-bold mb-4" data-aos="fade-down">Why Choose Us</h3>
+      <h3 class="MainHeading fw-bold mb-4" data-aos="fade-down">
+        Why Choose Us
+      </h3>
+
       <p class="text-muted mb-5" data-aos="fade-up">
         We blend creativity, technology, and performance to deliver digital experiences that leave an impact.
       </p>
@@ -76,21 +79,17 @@ const services = ref([
         <div
           v-for="(item, index) in services"
           :key="index"
-          class="col-md-4"
-          data-aos="zoom-in"
+          class="col-md-3 col-sm-6"
+          data-aos="fade-up"
         >
-          <div
-            class="service-card h-100 shadow-sm"
-            :class="{ 'bg-light text-dark': isDark }"
-          >
-            <div
-              class="icon-wrapper mx-auto mb-4"
-              :class="'bg-' + item.color + '-subtle text-' + item.color"
-            >
-              <i :class="item.icon + ' fs-2'"></i>
+          <div class="feature-box h-100">
+            <div class="icon-circle mb-3" :class="'text-' + item.color">
+              <i :class="item.icon + ' fs-3'"></i>
             </div>
-            <h5 class="fw-bold mb-3 text-gradient">{{ item.title }}</h5>
-            <p class="">{{ item.desc }}</p>
+
+            <h5 class="fw-bold">{{ item.title }}</h5>
+
+            <p class="text-muted small mt-2">{{ item.desc }}</p>
           </div>
         </div>
       </div>
@@ -99,9 +98,9 @@ const services = ref([
 </template>
 
 <style scoped>
-/* Section */
+/* Background */
 .why-section {
-  background: linear-gradient(135deg, rgba(13, 110, 253, 0.03), rgba(0, 0, 0, 0.02));
+  background: var(--bs-body-bg);
 }
 
 /* Title */
@@ -110,72 +109,58 @@ const services = ref([
   color: var(--Theme-Color, #0d6efd);
 }
 
-/* Card */
-.service-card {
-  border-radius: 20px;
-  background: var(--bs-body-bg);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 2rem 1.5rem;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+/* Feature Box — NOT a card (like your screenshot) */
+.feature-box {
+  padding: 1.6rem;
+  text-align: left;
+  border-radius: 14px;
+  background: #111;
+  border: 1px solid #1b1b1b;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: linear-gradient(120deg, rgba(13, 110, 253, 0.3), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.feature-box:hover {
+  border-color: #3b3bff;
+  box-shadow: 0 0 0 3px rgba(59, 59, 255, 0.3);
 }
 
-.service-card:hover::before {
-  opacity: 1;
+/* Light Mode */
+[data-bs-theme='light'] .feature-box {
+  background: #f8f9fa;
+  border-color: #e1e1e1;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(13, 110, 253, 0.1);
+[data-bs-theme='light'] .feature-box:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
 }
 
-/* Icon */
-.icon-wrapper {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+/* Icon Circle */
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
-.service-card:hover .icon-wrapper {
+
+.feature-box:hover .icon-circle {
   transform: scale(1.1) rotate(5deg);
 }
 
-/* Gradient Text */
-.text-gradient {
-  background: linear-gradient(90deg, #0d6efd, #6610f2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Dark Mode Fix */
-[data-bs-theme='dark'] .service-card {
-  background-color: #ffffff !important;
-  color: #000 !important;
-  border-color: rgba(0, 0, 0, 0.1);
+/* Light mode icon background */
+[data-bs-theme='light'] .icon-circle {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 /* Responsive */
 @media (max-width: 767px) {
   .MainHeading {
     font-size: 1.6rem;
-  }
-  .service-card {
-    padding: 1.5rem;
   }
 }
 </style>

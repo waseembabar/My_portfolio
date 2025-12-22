@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-about-section ">
+  <section class="hero-about-section">
     <div class="container">
       <div class="row align-items-center">
         <!-- Left: Profile Info -->
@@ -14,28 +14,23 @@
               I'm <span>Waseem</span> Babar
             </h2>
             <h5 class="ProfileExperence">
-              I am <span id="typed"></span>
+              Frontend Developer | Vue 3 | Nuxt.js | UI/UX Enthusiast
             </h5>
 
             <p class="about-description">
-              A passionate 
+              I am a passionate 
               <span class="highlight">Frontend Developer</span> skilled in 
-              <b>HTML, CSS, JavaScript, Vue 3, NUXT Ui and Nuxt.js</b>.  
-              I merge <span class="highlight">design</span>, <span class="highlight">creativity</span>, and 
-              <span class="highlight">technology</span> to craft dynamic, user-focused web experiences.  
-              Let’s collaborate to turn your ideas into reality and build something truly exceptional that stands out in the digital world.
+              <b>HTML, CSS, JavaScript, Vue 3, Nuxt.js</b>.  
+              I combine <span class="highlight">design</span>, 
+              <span class="highlight">creativity</span>, and 
+              <span class="highlight">technology</span> to build modern, responsive, and user-focused web experiences.  
+              Let’s collaborate to turn your ideas into reality!
             </p>
 
             <!-- Social Links -->
-            <div class="SocialLink mt-4">
-              <div class="me-3 iconDiv">
-                <a href="https://www.facebook.com/waseembabar4/" target="_blank">
-                  <i class="bi bi-facebook"></i>
-                </a>
-              </div>
-              <div class="me-3 iconDiv" @click="openWhatsApp">
-                <i class="bi bi-whatsapp"></i>
-              </div>
+            <!-- <div class="SocialLink mt-4">
+             
+             
               <div class="me-3 iconDiv">
                 <a href="https://twitter.com/waseembabar55" target="_blank">
                   <i class="bi bi-twitter-x"></i>
@@ -51,15 +46,29 @@
                   <i class="bi bi-cloud-arrow-down"></i>
                 </a>
               </div>
-            </div>
+            </div> -->
 
-            <button
-              class="theme-btn mt-4"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              Let’s Work Together
-            </button>
+            <div class="flex gap-3 mt-4">
+  <button
+    class="theme-btn"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+  >
+    Let’s Work Together
+  </button>
+
+  <a
+    href="/waseemCv.pdf"
+    download
+    class="theme-btn ms-3"
+    data-aos="zoom-in"
+    style="text-decoration: none;"
+    data-aos-delay="300"
+  >
+    Download Resume
+  </a>
+</div>
+
           </div>
         </div>
 
@@ -84,27 +93,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import Typed from "typed.js";
+import { onMounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-const typedInstance = ref(null);
-
-const initTyped = () => {
-  const options = {
-    strings: [
-      "Frontend Developer",
-      "Vue 3 Expert",
-      "Nuxt.js Developer",
-      "UI/UX Enthusiast",
-    ],
-    typeSpeed: 60,
-    backSpeed: 40,
-    loop: true,
-  };
-  typedInstance.value = new Typed("#typed", options);
-};
 
 function openWhatsApp() {
   const phoneNumber = "923369420537";
@@ -112,19 +103,18 @@ function openWhatsApp() {
 }
 
 onMounted(() => {
-  AOS.init();
-  initTyped();
+  AOS.init({ duration: 800, once: true });
 });
 </script>
 
 <style scoped lang="scss">
 .hero-about-section {
   background: linear-gradient(135deg, rgba(13, 110, 253, 0.03), rgba(0, 0, 0, 0.02));
-  transition: all 0.4s ease;
-  padding: 50px 0; 
+  padding: 50px 0;
   display: flex;
   align-items: center;
- min-height: 100vh;
+  min-height: 100vh;
+  transition: all 0.4s ease;
 }
 
 /* Headings */
@@ -189,7 +179,8 @@ onMounted(() => {
   margin-top: 10px;
 }
 
-.SocialLink div {
+.SocialLink div,
+.SocialLink button {
   height: 42px;
   width: 42px;
   border: 2px solid var(--Theme-Color);
@@ -198,6 +189,8 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
 }
 
 .SocialLink i {
@@ -205,55 +198,51 @@ onMounted(() => {
   color: var(--Theme-Color);
 }
 
-.SocialLink div:hover {
+.SocialLink div:hover,
+.SocialLink button:hover {
   background: var(--Theme-Color);
   transform: scale(1.1);
 }
-.SocialLink div:hover i {
+.SocialLink div:hover i,
+.SocialLink button:hover i {
   color: #fff;
 }
 
 /* Image */
 .about-image-wrapper {
-  height: 350px;
-  width: 300px;
+  height: 330px;
+  width: 330px;
   position: relative;
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
-  padding: 10px 20px;
+  padding: 18px;
   transition: transform 0.5s ease;
-  background: radial-gradient(
-    circle,
-    var(--Theme-Color, #007bff),
-    transparent 70%
-  );
+  background: radial-gradient(circle, var(--Theme-Color), transparent 70%);
 }
- 
+
 .about-image-wrapper:hover {
   transform: scale(1.05);
 }
+
 .glow-border {
   position: absolute;
-  inset: -3px;
+  inset: -4px;
   border-radius: 50%;
   border: 3px solid var(--Theme-Color);
-  animation: glow 3s linear infinite;
+  animation: glow 2.5s ease-in-out infinite;
   z-index: 0;
 }
 
 @keyframes glow {
   0% {
-    box-shadow: 0 0 10px var(--Theme-Color),
-      0 0 20px var(--Theme-Color-3, #00e0ff);
+    box-shadow: 0 0 10px var(--Theme-Color), 0 0 20px var(--Theme-Color-3);
   }
   50% {
-    box-shadow: 0 0 30px var(--Theme-Color-3),
-      0 0 50px var(--Theme-Color);
+    box-shadow: 0 0 35px var(--Theme-Color-3), 0 0 50px var(--Theme-Color);
   }
   100% {
-    box-shadow: 0 0 10px var(--Theme-Color),
-      0 0 20px var(--Theme-Color-3);
+    box-shadow: 0 0 10px var(--Theme-Color), 0 0 20px var(--Theme-Color-3);
   }
 }
 
@@ -272,15 +261,8 @@ onMounted(() => {
 [data-bs-theme="dark"] .hero-about-section {
   background: #121212;
   color: #eaeaea;
-  box-shadow: 0 4px 25px rgba(255, 255, 255, 0.05);
 }
 [data-bs-theme="dark"] .about-description {
   color: #cfcfcf;
-}
-[data-bs-theme="dark"] .MainHeading {
-  color: var(--Theme-Color);
-}
-[data-bs-theme="dark"] .SocialLink div {
-  border-color: var(--Theme-Color);
 }
 </style>

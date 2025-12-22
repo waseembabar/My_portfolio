@@ -26,9 +26,27 @@
             stands out in the digital world.
           </p>
 
-          <button class="theme-btn mt-3" data-aos="zoom-in" data-aos-delay="300">
-            Let’s Work Together
-          </button>
+         <div class="flex gap-3 mt-4">
+  <button
+    class="theme-btn"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+  >
+    Let’s Work Together
+  </button>
+
+  <a
+    href="/waseemCv.pdf"
+    download
+    class="theme-btn ms-4"
+    style="text-decoration: none; list-style: none;"
+    data-aos="zoom-in"
+    data-aos-delay="300"
+  >
+    Download Resume
+  </a>
+</div>
+
         </div>
       </div>
     </div>
@@ -134,6 +152,7 @@
   border: none;
   color: #fff;
   padding: 12px 30px;
+   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;

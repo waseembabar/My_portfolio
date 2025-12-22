@@ -1,239 +1,153 @@
-<!-- <template>
+<template>
   <section class="contact-wrapper">
-    <div class="container-fluid px-5">
-      <div class="row mx-5"> 
-        <div class="col-lg-8 col-md-7 p-5 form-column">
-          <h1 class="mb-4 fw-bold gradient-text">Send us a message</h1>
- 
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="contact-form"
-          > 
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="d-none">
-              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <!-- Contact Info Card -->
+        <div class="col-lg-6 col-md-8">
+          <div class="contact-card p-5 text-center">
+            <h2 class="fw-bold mb-4 gradient-text">Get in Touch</h2>
+            <p class="mb-5 opacity-75 contact-desc">
+              Have a project in mind? Let’s collaborate and build something amazing!
             </p>
- 
-            <div class="mb-3">
-              <label for="name" class="form-label">Name*</label>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-              />
-            </div> 
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="firstName" class="form-label">First Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="First Name"
-                />
+
+            <div class="contact-info mb-4">
+              <div class="contact-item mb-3">
+                <i class="bi bi-geo-alt-fill me-3 icon-gradient"></i>
+                <span class="contact-text">Bahria Town Phase 6, Rawalpindi, Pakistan</span>
               </div>
-              <div class="col-md-6">
-                <label for="phone" class="form-label">Phone</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="phone"
-                  name="phone"
-                  placeholder="Phone Number"
-                />
+
+              <div class="contact-item mb-3">
+                <i class="bi bi-telephone-fill me-3 icon-gradient"></i>
+                <a href="tel:03369420537" class="text-decoration-none contact-text">
+                  0336 9420537
+                </a>
               </div>
-            </div> 
-            <div class="mb-4">
-              <label for="message" class="form-label">Message*</label>
-              <textarea
-                class="form-control"
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Write your message"
-                required
-              ></textarea>
-            </div>
- 
-            <button type="submit" class="btn btn-gradient btn-lg">
-              Send Message
-            </button>
-          </form>
 
-          <hr class="my-5" />
-        </div>
- 
-        <div class="col-lg-4 col-md-5 text-white p-5 contact-info-column">
-          <h2 class="fw-bold mb-4">Contact Information</h2>
-          <p class="mb-4 opacity-75">
-            Have a project in mind? Let’s make something great together!
-          </p>
-
-          <div class="contact-info">
-            <div class="contact-item mb-3">
-              <i class="bi bi-geo-alt-fill me-2"></i>
-              <span>Bahria Town Phase 6, Rawalpindi, Pakistan</span>
+              <div class="contact-item mb-3">
+                <i class="bi bi-envelope-fill me-3 icon-gradient"></i>
+                <a href="mailto:waseembabar.developer@gmail.com" class="text-decoration-none contact-text">
+                  waseembabar.developer@gmail.com
+                </a>
+              </div>
             </div>
 
-            <div class="contact-item mb-3">
-              <i class="bi bi-telephone-fill me-2"></i>
-              <a href="tel:03369420537" class="text-white text-decoration-none">
-                0336 9420537
-              </a>
-            </div>
+            <!-- <div class="social-links mt-4">
 
-            <div class="contact-item">
-              <i class="bi bi-envelope-fill me-2"></i>
-              <a
-                href="mailto:waseembabar55@gmail.com"
-                class="text-white text-decoration-none"
-              >
-                waseembabar55@gmail.com
-              </a>
-            </div>
-          </div>
-
-          <div class="social-links mt-4">
-            <a href="#" class="me-3 text-white fs-4"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="me-3 text-white fs-4"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.facebook.com/waseembabar4/" class="me-3 fs-4 social-icon"><i class="bi bi-facebook"></i></a>
+              <div class="me-3 iconDiv">
+                <a href="https://twitter.com/waseembabar55" target="_blank">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <a href="https://twitter.com/waseembabar55" class="me-3 fs-4 social-icon"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="fs-4 social-icon"><i class="bi bi-linkedin"></i></a>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
-  </section> 
+  </section>
 </template>
 
-<script setup> 
+<script setup>
 </script>
 
-<style scoped> 
+<style scoped>
 .contact-wrapper {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   background: var(--contact-bg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Variables for light/dark mode */
 :root {
-  --contact-bg: radial-gradient(
-      circle at top left,
-      rgba(99, 102, 241, 0.12),
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(236, 72, 153, 0.12),
-      transparent 50%
-    );
-  --form-bg: #ffffff;
-  --text-color: #1e1e1e;
-  --border-color: #ddd;
+  --contact-bg: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+  --text-color: #fff;
+  --card-bg: rgba(0, 0, 0, 0.2);
+  --contact-desc-opacity: 0.75;
 }
 
-[data-bs-theme="dark"] {
-  --contact-bg: radial-gradient(
-      circle at top left,
-      rgba(99, 102, 241, 0.15),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(236, 72, 153, 0.15),
-      transparent 60%
-    ),
-    #0f0f0f;
-  --form-bg: #1e1e1e;
-  --text-color: #ffffff;
-  --border-color: rgba(255, 255, 255, 0.15);
+[data-bs-theme="light"] {
+  --text-color: #111;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --contact-desc-opacity: 0.8;
 }
 
-.form-column {
-  background-color: var(--form-bg);
+/* Contact Card */
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: var(--text-color);
 }
 
-.contact-info-column {
-  background: linear-gradient(135deg, #6366f1, #ec4899);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-.contact-form .form-control {
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  padding: 12px 14px;
-  font-size: 15px;
-  background-color: transparent;
-  color: var(--text-color);
-  transition: all 0.3s ease;
-}
-
-.contact-form .form-control:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
-}
-
-.btn-gradient {
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 40px;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
-
-.btn-gradient:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
+/* Gradient Text */
 .gradient-text {
   background: linear-gradient(90deg, #6366f1, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.contact-info i {
-  color: #fff;
-}
-
+/* Contact Items */
 .contact-item {
   font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
-.social-links a {
-  transition: 0.3s ease;
+.contact-item i {
+  font-size: 24px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-links a:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
+.icon-gradient {
+  background: linear-gradient(45deg, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 992px) {
-  .contact-info-column {
-    text-align: center;
+.contact-item:hover i {
+  transform: scale(1.2);
+}
+
+/* Contact Text */
+.contact-text {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Social Links */
+.social-links a.social-icon {
+  color: var(--text-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Contact Description opacity */
+.contact-desc {
+  opacity: var(--contact-desc-opacity);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 3rem 2rem;
   }
 }
-</style> -->
-<template>
-<div class="container my-5"></div></template>
-<script setup>
-</script>
+</style>

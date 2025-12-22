@@ -6,7 +6,7 @@ const loading = ref(true); // Loader state
 onMounted(() => {
   setTimeout(() => {
     loading.value = false; // Hide loader after 4 seconds
-  }, 4000); // Set to 4000ms for a 4-second loader
+  }, 500); // Set to 4000ms for a 4-second loader
 });
 
 import HeroSection from "../Home/HeroSection.vue";
