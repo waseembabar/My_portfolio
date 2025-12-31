@@ -3,11 +3,7 @@
     <div class="container">
       <div class="row align-items-center">
         <!-- Left: Profile Info -->
-        <div
-          class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1"
-          data-aos="fade-right"
-          data-aos-delay="100"
-        >
+        <div class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="100">
           <div class="text-content">
             <h4 class="MainHeading">Hello 👋</h4>
             <h2 class="ProfileName">
@@ -18,73 +14,62 @@
             </h5>
 
             <p class="about-description">
-              I am a passionate 
-              <span class="highlight">Frontend Developer</span> skilled in 
-              <b>HTML, CSS, JavaScript, Vue 3, Nuxt.js</b>.  
-              I combine <span class="highlight">design</span>, 
-              <span class="highlight">creativity</span>, and 
-              <span class="highlight">technology</span> to build modern, responsive, and user-focused web experiences.  
+              I am a passionate
+              <span class="highlight">Frontend Developer</span> skilled in
+              <b>HTML, CSS, JavaScript, Vue 3, Nuxt.js</b>.
+              I combine <span class="highlight">design</span>,
+              <span class="highlight">creativity</span>, and
+              <span class="highlight">technology</span> to build modern, responsive, and user-focused web experiences.
               Let’s collaborate to turn your ideas into reality!
             </p>
 
             <!-- Social Links -->
-            <!-- <div class="SocialLink mt-4">
-             
-             
+            <div class="SocialLink mt-4">
+
+
               <div class="me-3 iconDiv">
                 <a href="https://twitter.com/waseembabar55" target="_blank">
                   <i class="bi bi-twitter-x"></i>
                 </a>
               </div>
+              <div class="me-3 iconDiv">
+                <a href="https://wa.me/1234567890" target="_blank">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+              <div class="me-3 iconDiv">
+                <a href="https://www.linkedin.com/in/waseem-babar-coder/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="me-3 iconDiv">
+                <a href="https://www.facebook.com/waseembabar4" target="_blank">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
               <div class="iconDiv">
-                <a
-                  class="nav-link BoldText"
-                  href="waseemCv.pdf"
-                  target="_blank"
-                  title="Resume"
-                >
+                <a class="nav-link BoldText" href="waseemCv.pdf" target="_blank" title="Resume">
                   <i class="bi bi-cloud-arrow-down"></i>
                 </a>
               </div>
-            </div> -->
+            </div>
 
             <div class="flex gap-3 mt-4">
-  <button
-    class="theme-btn"
-    data-aos="zoom-in"
-    data-aos-delay="200"
-  >
-    Let’s Work Together
-  </button>
 
-  <a
-    href="/waseemCv.pdf"
-    download
-    class="theme-btn ms-3"
-    data-aos="zoom-in"
-    style="text-decoration: none;"
-    data-aos-delay="300"
-  >
-    Download Resume
-  </a>
-</div>
+              <a href="/waseemCv.pdf" download class="theme-btn " data-aos="zoom-in" style="text-decoration: none;"
+                data-aos-delay="300">
+                Download Resume
+              </a>
+            </div>
 
           </div>
         </div>
 
         <!-- Right: Profile Image -->
-        <div
-          class="col-lg-6 text-center order-1 order-lg-2 mb-4 mb-lg-0"
-          data-aos="fade-left"
-          data-aos-delay="200"
-        >
+        <div class="col-lg-6 text-center order-1 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left" data-aos-delay="200">
           <div class="about-image-wrapper">
             <div class="glow-border"></div>
-            <img
-              src="@/assets/ProfileImages.png"
-              alt="About Waseem Babar"
-              class="about-image"
-            />
+            <img src="@/assets/ProfileImages.png" alt="About Waseem Babar" class="about-image" />
           </div>
         </div>
       </div>
@@ -113,7 +98,7 @@ onMounted(() => {
   padding: 50px 0;
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   transition: all 0.4s ease;
 }
 
@@ -167,6 +152,7 @@ onMounted(() => {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
+
 .theme-btn:hover {
   background: var(--Theme-Color-3);
   transform: translateY(-3px);
@@ -203,6 +189,7 @@ onMounted(() => {
   background: var(--Theme-Color);
   transform: scale(1.1);
 }
+
 .SocialLink div:hover i,
 .SocialLink button:hover i {
   color: #fff;
@@ -238,9 +225,11 @@ onMounted(() => {
   0% {
     box-shadow: 0 0 10px var(--Theme-Color), 0 0 20px var(--Theme-Color-3);
   }
+
   50% {
     box-shadow: 0 0 35px var(--Theme-Color-3), 0 0 50px var(--Theme-Color);
   }
+
   100% {
     box-shadow: 0 0 10px var(--Theme-Color), 0 0 20px var(--Theme-Color-3);
   }
@@ -253,6 +242,7 @@ onMounted(() => {
   z-index: 1;
   transition: transform 0.4s ease;
 }
+
 .about-image:hover {
   transform: scale(1.05);
 }
@@ -262,6 +252,7 @@ onMounted(() => {
   background: #121212;
   color: #eaeaea;
 }
+
 [data-bs-theme="dark"] .about-description {
   color: #cfcfcf;
 }

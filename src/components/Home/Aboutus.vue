@@ -27,13 +27,7 @@
           </p>
 
          <div class="flex gap-3 mt-4">
-  <button
-    class="theme-btn"
-    data-aos="zoom-in"
-    data-aos-delay="200"
-  >
-    Let’s Work Together
-  </button>
+ 
 
   <a
     href="/waseemCv.pdf"
