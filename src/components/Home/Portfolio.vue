@@ -27,26 +27,7 @@
       </div>
       </router-link>
     </div>
-    <div class="col-md-4 " data-aos="fade-up" >
-      <router-link to="/userpanel">
-        <div class="p-3  ProjectCard" >
-        <h5 class="text-center">AI Voice Change User DashBoard</h5>
-
-        <img src="../../assets/AiVoice/AI1.webp" class="img-fluid" alt="">
-
-      </div>
-      </router-link>
-    </div>
-    <div class="col-md-4 " data-aos="fade-up" >
-      <router-link to="/adminpanel">
-        <div class="p-3  ProjectCard" >
-        <h5 class="text-center">AI Voice  Admin Panel</h5>
-
-        <img src="../../assets/AiVoice/AI1.webp" class="img-fluid" alt="">
-
-      </div>
-      </router-link>
-    </div>
+   
     <div class="col-md-4 " data-aos="fade-up" >
      <router-link to="/DunBradstreet">
       <div class="p-3  ProjectCard" ><h5 class="text-center">
